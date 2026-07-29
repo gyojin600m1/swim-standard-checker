@@ -9358,7 +9358,7 @@
       const KEY=isLocal?"views-dev":"views";
       const d=new Date();
       const today=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
-      const stampKey="viewCounterStamp:"+KEY;
+      const stampKey="viewCounterStamp:"+NS+":"+KEY;
       let counted=false;
       try{counted=localStorage.getItem(stampKey)===today;}catch(e){}
       fetch("https://abacus.jasoncameron.dev/"+(counted?"get":"hit")+"/"+NS+"/"+KEY)
